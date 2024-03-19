@@ -1,160 +1,104 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="utf-8">
-        <title>Company Profile System By Susmita Biswas</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
-        <link href="img/favicon.png" rel="icon">
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
-
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/custom.css" rel="stylesheet">
-    </head>
-
-    <body>
-
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+<?php
+require_once("layouts/css_link.php")
+?>
+<body>
+<?php
+require_once ("layouts/spinner.php")
+?>
+<div class="container-fluid bg-primary px-5 d-none d-lg-block">
+    <div class="row gx-0">
+        <div class="col-lg-12 text-center text-lg-end mb-2 mb-lg-0">
+            <div class="d-inline-flex align-items-center" style="height: 45px;">
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://twitter.com/"><i
+                            class="fab fa-twitter fw-normal"></i></a>
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                   href="https://www.facebook.com/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                   href="https://www.linkedin.com/"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                   href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://www.youtube.com/"><i
+                            class="fab fa-youtube fw-normal"></i></a>
             </div>
         </div>
-        <!-- Spinner End -->
-
-        <!-- Topbar Start -->
-        <div class="container-fluid bg-primary px-5 d-none d-lg-block">
-            <div class="row gx-0">
-                <div class="col-lg-12 text-center text-lg-end mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center" style="height: 45px;">
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://twitter.com/"><i class="fab fa-twitter fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/"><i class="fab fa-facebook-f fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://www.youtube.com/"><i class="fab fa-youtube fw-normal"></i></a>
+    </div>
+</div>
+<div class="container-fluid position-relative p-0">
+    <?php
+    require_once ("layouts/navbar.php")
+    ?>
+    <!-- Carousel Start -->
+    <div class="carousel-header">
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img src="img/slider/1.jpg" class="img-fluid" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <!--                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>-->
+<!--                            <h1 class="display-2 text-capitalize text-white mb-4">Let's The World Together!</h1>-->
+                            <p class="mb-5" style="font-size: 30px">
+                                Custom software development, web application development, mobile app development, etc.
+                            </p>
+                            <!--                                    <div class="d-flex align-items-center justify-content-center">-->
+                            <!--                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>-->
+                            <!--                                    </div>-->
+                        </div>
                     </div>
                 </div>
-<!--                <div class="col-lg-4 text-center text-lg-end">-->
-<!--                    <div class="d-inline-flex align-items-center" style="height: 45px;">-->
-<!--                        <a href="#"><small class="me-3 text-light"><i class="fa fa-user me-2"></i>Register</small></a>-->
-<!--                        <a href="#"><small class="me-3 text-light"><i class="fa fa-sign-in-alt me-2"></i>Login</small></a>-->
-<!--                        <div class="dropdown">-->
-<!--                            <a href="#" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i class="fa fa-home me-2"></i> My Dashboard</small></a>-->
-<!--                            <div class="dropdown-menu rounded">-->
-<!--                                <a href="#" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> My Profile</a>-->
-<!--                                <a href="#" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i> Inbox</a>-->
-<!--                                <a href="#" class="dropdown-item"><i class="fas fa-bell me-2"></i> Notifications</a>-->
-<!--                                <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i> Account Settings</a>-->
-<!--                                <a href="#" class="dropdown-item"><i class="fas fa-power-off me-2"></i> Log Out</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-            </div>
-        </div>
-        <!-- Topbar End -->
-
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
-                     <img src="img/Logo.jpg" alt="Logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="employee.html" class="nav-item nav-link">Employees</a>
-                        <a href="job.html" class="nav-item nav-link">Job Details</a>
-                        <a href="product.html" class="nav-item nav-link">Products</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <div class="carousel-item">
+                    <img src="img/slider/2.jpg" class="img-fluid" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <!--                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>-->
+<!--                            <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Tour At Travel</h1>-->
+                            <p class="mb-5" style="font-size: 30px">
+                                Expert advice on technology strategy, infrastructure setup, software selection, and project management.
+                            </p>
+                            <!--                                    <div class="d-flex align-items-center justify-content-center">-->
+                            <!--                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>-->
+                            <!--                                    </div>-->
+                        </div>
                     </div>
                 </div>
-            </nav>
-
-            <!-- Carousel Start -->
-            <div class="carousel-header">
-                <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <img src="img/slider/1.jpg" class="img-fluid" alt="Image">
-                            <div class="carousel-caption">
-                                <div class="p-3" style="max-width: 900px;">
-<!--                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>-->
-                                    <h1 class="display-2 text-capitalize text-white mb-4">Let's The World Together!</h1>
-                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                    </p>
-<!--                                    <div class="d-flex align-items-center justify-content-center">-->
-<!--                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>-->
-<!--                                    </div>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/slider/2.jpg" class="img-fluid" alt="Image">
-                            <div class="carousel-caption">
-                                <div class="p-3" style="max-width: 900px;">
-<!--                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>-->
-                                    <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Tour At Travel</h1>
-                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                    </p>
-<!--                                    <div class="d-flex align-items-center justify-content-center">-->
-<!--                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>-->
-<!--                                    </div>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/slider/3.jpg" class="img-fluid" alt="Image">
-                            <div class="carousel-caption">
-                                <div class="p-3" style="max-width: 900px;">
-<!--                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>-->
-                                    <h1 class="display-2 text-capitalize text-white mb-4">You Like To Go?</h1>
-                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                    </p>
-<!--                                    <div class="d-flex align-items-center justify-content-center">-->
-<!--                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>-->
-<!--                                    </div>-->
-                                </div>
-                            </div>
+                <div class="carousel-item">
+                    <img src="img/slider/3.jpg" class="img-fluid" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <!--                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>-->
+<!--                            <h1 class="display-2 text-capitalize text-white mb-4">You Like To Go?</h1>-->
+                            <p class="mb-5" style="font-size: 30px">
+                                Cloud computing solutions such as Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).
+                            </p>
+                            <!--                                    <div class="d-flex align-items-center justify-content-center">-->
+                            <!--                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>-->
+                            <!--                                    </div>-->
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-                        <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
             </div>
-            <!-- Carousel End -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+    </div>
+    <!-- Carousel End -->
+</div>
 <!--        <div class="container-fluid search-bar position-relative" style="top: -50%; transform: translateY(-50%);">-->
 <!--            <div class="container">-->
 <!--                <div class="position-relative rounded-pill w-100 mx-auto p-5" style="background: rgba(19, 53, 123, 0.8);">-->
@@ -163,9 +107,9 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- Navbar & Hero End -->
+<!-- Navbar & Hero End -->
 
-        <!-- About Start -->
+<!-- About Start -->
 <!--        <div class="container-fluid about py-5">-->
 <!--            <div class="container py-5">-->
 <!--                <div class="row g-5 align-items-center">-->
@@ -204,9 +148,9 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- About End -->
+<!-- About End -->
 
-        <!-- Services Start -->
+<!-- Services Start -->
 <!--        <div class="container-fluid bg-light service py-5">-->
 <!--            <div class="container py-5">-->
 <!--                <div class="mx-auto text-center mb-5" style="max-width: 900px;">-->
@@ -326,9 +270,9 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- Services End -->
+<!-- Services End -->
 
-        <!-- Destination Start -->
+<!-- Destination Start -->
 <!--        <div class="container-fluid destination py-5">-->
 <!--            <div class="container py-5">-->
 <!--                <div class="mx-auto text-center mb-5" style="max-width: 900px;">-->
@@ -635,9 +579,9 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- Destination End -->
+<!-- Destination End -->
 
-        <!-- Explore Tour Start -->
+<!-- Explore Tour Start -->
 <!--        <div class="container-fluid ExploreTour py-5">-->
 <!--            <div class="container py-5">-->
 <!--                <div class="mx-auto text-center mb-5" style="max-width: 900px;">-->
@@ -826,9 +770,9 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- Explore Tour Start -->
+<!-- Explore Tour Start -->
 
-        <!-- Packages Start -->
+<!-- Packages Start -->
 <!--        <div class="container-fluid packages py-5">-->
 <!--            <div class="container py-5">-->
 <!--                <div class="mx-auto text-center mb-5" style="max-width: 900px;">-->
@@ -971,9 +915,9 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- Packages End -->
+<!-- Packages End -->
 
-        <!-- Gallery Start -->
+<!-- Gallery Start -->
 <!--        <div class="container-fluid gallery py-5 my-5">-->
 <!--            <div class="mx-auto text-center mb-5" style="max-width: 900px;">-->
 <!--                <h5 class="section-title px-3">Our Gallery</h5>-->
@@ -1285,9 +1229,9 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- Gallery End -->
+<!-- Gallery End -->
 
-        <!-- Tour Booking Start -->
+<!-- Tour Booking Start -->
 <!--        <div class="container-fluid booking py-5">-->
 <!--            <div class="container py-5">-->
 <!--                <div class="row g-5 align-items-center">-->
@@ -1369,9 +1313,9 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- Tour Booking End -->
+<!-- Tour Booking End -->
 
-        <!-- Travel Guide Start -->
+<!-- Travel Guide Start -->
 <!--        <div class="container-fluid guide py-5">-->
 <!--            <div class="container py-5">-->
 <!--                <div class="mx-auto text-center mb-5" style="max-width: 900px;">-->
@@ -1466,9 +1410,9 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- Travel Guide End -->
+<!-- Travel Guide End -->
 
-        <!-- Blog Start -->
+<!-- Blog Start -->
 <!--        <div class="container-fluid blog py-5">-->
 <!--            <div class="container py-5">-->
 <!--                <div class="mx-auto text-center mb-5" style="max-width: 900px;">-->
@@ -1550,9 +1494,9 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- Blog End -->
+<!-- Blog End -->
 
-        <!-- Testimonial Start -->
+<!-- Testimonial Start -->
 <!--        <div class="container-fluid testimonial py-5">-->
 <!--            <div class="container py-5">-->
 <!--                <div class="mx-auto text-center mb-5" style="max-width: 900px;">-->
@@ -1643,9 +1587,9 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- Testimonial End -->
+<!-- Testimonial End -->
 
-        <!-- Subscribe Start -->
+<!-- Subscribe Start -->
 <!--        <div class="container-fluid subscribe py-5">-->
 <!--            <div class="container text-center py-5">-->
 <!--                <div class="mx-auto text-center" style="max-width: 900px;">-->
@@ -1660,90 +1604,49 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <!-- Subscribe End -->
-        <div class="container py-5">
-            <h1>About the System</h1>
-            <p>Susmita Biswas is a Professional Web Developer.</p>
-        </div>
-        <!-- Footer Start -->
-        <div class="container-fluid footer py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-4">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Get In Touch</h4>
-                            <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-<!--                            <div class="d-flex align-items-center">-->
-<!--                                <i class="fas fa-share fa-2x text-white me-2"></i>-->
-<!--                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>-->
-<!--                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>-->
-<!--                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>-->
-<!--                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>-->
-<!--                            </div>-->
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Company</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Support</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
+<!-- Subscribe End -->
+<div class="container py-5">
+    <h1>About the System</h1>
+    <p>Susmita Biswas is a Professional Web Developer.</p>
+</div>
+<!-- Footer Start -->
+<?php
+    require_once ("layouts/footer.php")
+?>
+<!-- Footer End -->
 
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright text-body py-4">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-12 text-center  mb-md-0">
-                        <i class="fas fa-copyright me-2"></i>All right reserved.
-                        Developed By <a class="text-white" href="#">Susmita Biswas</a>
-                    </div>
-<!--                    <div class="col-md-6 text-center text-md-start">-->
-<!--                        Developed By <a class="text-white" href="#">Susmita Biswas</a>-->
-<!--                    </div>-->
-                    </div>
-                </div>
+<!-- Copyright Start -->
+<div class="container-fluid copyright text-body py-4">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-12 text-center  mb-md-0">
+                <i class="fas fa-copyright me-2"></i>All right reserved.
+                Developed By <a class="text-white" href="#">Susmita Biswas</a>
             </div>
+            <!--                    <div class="col-md-6 text-center text-md-start">-->
+            <!--                        Developed By <a class="text-white" href="#">Susmita Biswas</a>-->
+            <!--                    </div>-->
         </div>
-        <!-- Copyright End -->
+    </div>
+</div>
+</div>
+<!-- Copyright End -->
 
-        <!-- Back to Top -->
+<!-- Back to Top -->
 <!--        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>-->
 
 
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
 
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
 
 </html>

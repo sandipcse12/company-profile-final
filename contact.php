@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['login_status']) && $_SESSION['login_status']){
+    header('Location: dashboard.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,23 +79,9 @@
 
 <!-- Navbar & Hero Start -->
 <div class="container-fluid position-relative p-0">
-    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-        <a href="" class="navbar-brand p-0">
-            <img src="img/Logo.jpg" alt="Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="fa fa-bars"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="employee.html" class="nav-item nav-link">Employees</a>
-                <a href="job.html" class="nav-item nav-link">Job Details</a>
-                <a href="product.html" class="nav-item nav-link">Products</a>
-                <a href="contact.html" class="nav-item nav-link active">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <?php
+    require_once ("layouts/navbar.php")
+    ?>
 </div>
 <!-- Navbar & Hero End -->
 
@@ -168,50 +160,9 @@
     </div>
 </div>
 <!-- Footer Start -->
-<div class="container-fluid footer py-5">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-md-6 col-lg-6 col-xl-4">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Get In Touch</h4>
-                    <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                    <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                    <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                    <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                    <!--                            <div class="d-flex align-items-center">-->
-                    <!--                                <i class="fas fa-share fa-2x text-white me-2"></i>-->
-                    <!--                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>-->
-                    <!--                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>-->
-                    <!--                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>-->
-                    <!--                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>-->
-                    <!--                            </div>-->
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-4">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Company</h4>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-4">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Support</h4>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?php
+require_once ("layouts/footer.php")
+?>
 <!-- Footer End -->
 
 <!-- Copyright Start -->
